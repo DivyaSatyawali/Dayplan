@@ -39,6 +39,10 @@ export class ApisService {
   }
   findpath(loc):Observable<any>
   {
-    return this.htt.get<any>(`https://api.foursquare.com/v2/venues/explore?client_id=S2GJL4EXHEBHUOB4NPHBZWVUMT15SEO5E1FYWUFIECLF2JA5&client_secret=SPBX024IS1MKRJQGGXZ12BQTF2TGRKXGRZ5P003M0W2ZVQBT&v=20180323&limit=1&ll=${loc.longitude},${loc.latitude}&query=nightlife&intent=browse&%20radius=500`);
+    return this.http.get<any>(`https://api.foursquare.com/v2/venues/explore?client_id=S2GJL4EXHEBHUOB4NPHBZWVUMT15SEO5E1FYWUFIECLF2JA5&client_secret=SPBX024IS1MKRJQGGXZ12BQTF2TGRKXGRZ5P003M0W2ZVQBT&v=20180323&limit=1&ll=${loc.longitude},${loc.latitude}&query=nightlife&intent=browse&%20radius=500`);
+  }
+  findOptionsInThisRange(range):Observable<any>
+  {
+    return this.http.get<any>(`https://api.foursquare.com/v2/venues/explore?client_id=S2GJL4EXHEBHUOB4NPHBZWVUMT15SEO5E1FYWUFIECLF2JA5&client_secret=SPBX024IS1MKRJQGGXZ12BQTF2TGRKXGRZ5P003M0W2ZVQBT&v=20180323&limit=1&range=${range}`);
   }
 }

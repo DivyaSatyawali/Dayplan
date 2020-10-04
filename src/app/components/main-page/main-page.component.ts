@@ -77,5 +77,12 @@ data;
       	
       })
   }
-
+  getMorePlaces(range)
+  {
+    this.apiService.findOptionsInThisRange(range).subscribe(data => {
+      this.places = data;
+    },err => {
+      console.log(err);
+    })
+  }
 }
